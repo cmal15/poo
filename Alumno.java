@@ -1,23 +1,26 @@
 //import java.util.LinkedList;
+import java.util.HashMap;
 
 public class Alumno{
 
     private int numeroDeCuenta;
+    private int asignaturasCursadas;
     private String nombre;
-    private float calificacion;
+    private  HashMap<Integer, double> calificaciones;
+    private double promedio;
 
     public Alumno(int numeroDeCuenta, String nombre){
 
         this.numeroDeCuenta = numeroDeCuenta;
         this.nombre = nombre;
-        this.calificacion = 0f;
-
+        this.promedio = 0f;
+        asignaturasCursadas = 0;
+        calificaciones = new HashMap<>();
     }
 
     public static Alumno nuevo(Scanner sc){
         int numeroDeCuenta;
         String nombre;
-        float calificacion;
         System.out.print("Introduzca numero de cuenta: ");
         numeroDeCuenta = sc.nextInt();
         System.out.print("Introduzca nombre: ");
@@ -31,8 +34,8 @@ public class Alumno{
     public String getNombre(){
         return nombre;
     }
-    public float getCalificacion(){
-        return calificacion;
+    public HashMap<Integer, double> getCalificaciones(){
+        return calificaciones;
     }
     public void setNumeroDeCuenta(int numeroDeCuenta){
         this.numeroDeCuenta =  numeroDeCuenta;
@@ -43,10 +46,24 @@ public class Alumno{
     public void setCalificacion(float calificacion){
         this.calificacion = calificacion;
     }
-    public void mostrar(){
+
+    public void addCalificacion(int claveAsignatura, double calificacion){
+        calificaciones.put(claveAsignatura, calificacion);
+        double suma = 0;
+        for(double i: calificaciones.entrySet()){
+            suma += i;
+        }
+        promedio = suma/asignaturasCursadas;
+    }
+
+    public void mostrar(HashMap<Integer , Asignatura> asignaturas){
         System.out.println("Numero de cuenta: " + this.numeroDeCuenta);
         System.out.println("Numero de nombre: " + this.nombre);
         System.out.println("Numero de promedio: " + this.promedio);
+        System.out.println("Calificaciones:");
+        for(Integer i : calificaciones.keySet){
+            System.out.println(asignaturas.get(i).getNombre() + ": " + calificaciones.get(i));
+        }
     }
 
 }

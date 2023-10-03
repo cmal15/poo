@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.LinkedList;
+import java.util.HashMap;
 
 public class Principal {
     
@@ -7,10 +8,10 @@ public class Principal {
         
         Scanner sc = new Scanner(System.in);
 
-        LinkedList<Alumno> alumnos= new LinkedList<Alumno>();
-        LinkedList<Profesor> profesores= new LinkedList<Profesor>();
+        HashMap<Integer, Alumno> alumnos = new HashMap<>();
+        LinkedList<Profesor> profesores = new LinkedList<Profesor>();
         LinkedList<Grupo> grupos = new LinkedList<Grupo>();
-        LinkedList<Asignatura> asignaturas = new LinkedList<Asignatura>();
+        HashMap<Integer, Asignatura> asignaturas = new HashMap<>();
 
         int op, op2, aux;
         do {
@@ -33,8 +34,17 @@ public class Principal {
                         break;
                     case 3:
                         System.out.println("Introduzca el numero de cuenta del alumno a modificar");
-                        
+                            aux = sc.nextInt();
+                            if(alumnos.containsKey(aux)){
+                                System.out.print("Introduzca el nombre: ");
+                                String nombre = sc.nextLine();
+                                alumnos.get(aux).setNombre(nombre);
+                            }else{
+                                System.out.println("No hay alumno registrado con ese numero de cuenta");
+                            }
                         break;
+                    case 4:
+                        //eliminar
                 }
                 break;
             case 2:
