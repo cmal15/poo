@@ -17,12 +17,12 @@ public class Grupo{
     public void eliminar(){
         asignatura = null;
         profesor = null;
-        numero = null;
+        //numero = null;
         alumnos = null;
         cantidad--;
     }
 
-    public static getCantidad(){
+    public static int getCantidad(){
         return cantidad;
     }
 
