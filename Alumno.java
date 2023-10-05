@@ -6,7 +6,7 @@ public class Alumno{
 
     private int numeroDeCuenta;
     private String nombre;
-    private  HashMap<Integer, double> calificaciones;
+    private  HashMap<Integer, Double> calificaciones;
     private double promedio;
     private static int numeroAlumnos=0;
 
@@ -24,6 +24,7 @@ public class Alumno{
         String nombre;
         System.out.print("Introduzca numero de cuenta: ");
         numeroDeCuenta = sc.nextInt();
+        sc.nextLine();
         System.out.print("Introduzca nombre: ");
         nombre = sc.nextLine();
         return new Alumno(numeroDeCuenta,nombre);
@@ -38,7 +39,7 @@ public class Alumno{
     public String getNombre(){
         return nombre;
     }
-    public HashMap<Integer, double> getCalificaciones(){
+    public HashMap<Integer, Double> getCalificaciones(){
         return calificaciones;
     }
     public void setNumeroDeCuenta(int numeroDeCuenta){
@@ -47,14 +48,12 @@ public class Alumno{
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
-    public void setCalificacion(float calificacion){
-        this.calificacion = calificacion;
-    }
 
-    public void addCalificacion(int claveAsignatura, double calificacion){
+
+    public void addCalificacion(int claveAsignatura, Double calificacion){
         calificaciones.put(claveAsignatura, calificacion);
-        double suma = 0;
-        for(double i: calificaciones.entrySet()){
+        Double suma = 0.0;
+        for(Double i: calificaciones.values()){
             suma += i;
         }
         promedio = suma/calificaciones.size();
@@ -65,10 +64,13 @@ public class Alumno{
         System.out.println("Numero de nombre: " + this.nombre);
         System.out.println("Numero de promedio: " + this.promedio);
         System.out.println("Calificaciones:");
-        for(Integer i : calificaciones.keySet){
-            System.out.println(asignaturas.get(i).getNombre() + ": " + calificaciones.get(i));
+        for(Integer i : calificaciones.keySet()){
+            System.out.println(asignaturas.get(i).getnombre() + ": " + calificaciones.get(i));
         }
     }
     
-
+    public String toString(){
+        String calificacionesAlu;
+        return "\nNombre: "+ nombre+"\nNumero de cuenta: "+numeroDeCuenta+"\nPromedio: "+promedio;
+    }
 }
