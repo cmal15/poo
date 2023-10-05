@@ -70,8 +70,5 @@ public class Alumno{
         }
     }
     
-    public String toString(){
-        return "\nNombre: "+ nombre+"\nIdentificador: "+identificador;
-    }
 
 }
