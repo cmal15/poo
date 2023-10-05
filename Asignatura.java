@@ -19,9 +19,6 @@ public class Asignatura{
         numeroAsignatura++;
     }
     
-    public int getNumeroDeCuenta(){
-        return numeroDeCuenta;
-    }
     public int getClave(){
         return clave;
     }
