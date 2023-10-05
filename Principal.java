@@ -110,12 +110,12 @@ public class Principal {
                             } 
                         break;
                     case 4: 
+                        //grupo
                         System.out.println("Mostrando todos los grupos");
                         for(int i = 0; i < grupos.size(); i++){
                             System.out.println(grupos.get(i));
                             System.out.println();
                         }
-                        //grupo
                         break;
                     default:
                         break;
@@ -140,8 +140,19 @@ public class Principal {
                         break;
                     case 2:
                         //Profesor
+                        System.out.println("Introduzca el identificador del profesor a modificar");
+                        aux = sc.nextInt();
+                        sc.nextLine();
+                        if(profesores.containsKey(aux)){
+                            System.out.println("Introduzca el nombre modificado");
+                            String nombre = sc.nextLine();
+                            profesores.get(aux).setNombre(nombre);
+                        }else{
+                            System.out.println("Identificador invalido");
+                        }
                         break;
                     case 3:
+                        
                         //Asignatura
                         break;
                     case 4: 

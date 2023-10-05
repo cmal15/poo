@@ -53,8 +53,8 @@ public class Grupo{
         for(int i = 0; i < alumnos.size(); i++){
             str += alumnos.get(i).getNumeroDeCuenta() + ": " + alumnos.get(i).getNombre() + "\n";
         }
-        return "Asignatura: " + asignatura.getnombre() +
-                "\nProfesor: " + profesor.getnombre() +
+        return "Asignatura: " + asignatura.getNombre() +
+                "\nProfesor: " + profesor.getNombre() +
                 "\nNumero: " + numero + 
                 "\nAlumnos:\n"+ str;
     }

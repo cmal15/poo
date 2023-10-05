@@ -65,7 +65,7 @@ public class Alumno{
         System.out.println("Numero de promedio: " + this.promedio);
         System.out.println("Calificaciones:");
         for(Integer i : calificaciones.keySet()){
-            System.out.println(asignaturas.get(i).getnombre() + ": " + calificaciones.get(i));
+            System.out.println(asignaturas.get(i).getNombre() + ": " + calificaciones.get(i));
         }
     }
     

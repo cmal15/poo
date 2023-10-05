@@ -10,10 +10,10 @@ public class Profesor{
         numeroProfesor++;
     }
 
-    public String getnombre() {
+    public String getNombre() {
         return nombre;
     }
-    public void setnombre (String nombre) {
+    public void setNombre (String nombre) {
         this.nombre = nombre;
     }
     public int getIdentificador() {
@@ -22,7 +22,7 @@ public class Profesor{
     public void setIdentificador (int identificador) {
         this.identificador = identificador;
     }
-    public int getnumeroProfesor() {
+    public int getNumeroProfesor() {
         return numeroProfesor;
     }
     public String toString(){

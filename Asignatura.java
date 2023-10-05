@@ -22,28 +22,28 @@ public class Asignatura{
     public int getClave(){
         return clave;
     }
-    public String getnombre() {
+    public String getNombre() {
         return nombre;
     }
-    public int gethoras() {
+    public int getHoras() {
         return horas;
     }
-    public int getcreditos() {
+    public int getCreditos() {
         return creditos;
     }
-    public int getnumeroAsignatura(){
+    public int getNumeroAsignatura(){
         return numeroAsignatura;
     }
     public void setClave(int clave){
         this.clave = clave;
     }
-    public void setnombre (String nombre) {
+    public void setNombre (String nombre) {
         this.nombre = nombre;
     }
-    public void sethoras (int horas) {
+    public void setHoras (int horas) {
         this.horas = horas;
     }
-    public void setcreditos (int creditos) {
+    public void setCreditos (int creditos) {
         this.creditos = creditos;
     }
 }
