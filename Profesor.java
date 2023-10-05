@@ -16,4 +16,13 @@ public class Profesor{
     public void setnombre (String nombre) {
         this.nombre = nombre;
     }
+    public int getIdentificador() {
+        return identificador;
+    }
+    public void setIdentificador (int identificador) {
+        this.identificador = identificador;
+    }
+    public int getnumeroProfesor() {
+        return numeroProfesor;
+    }
 }
