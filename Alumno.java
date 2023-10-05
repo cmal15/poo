@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Alumno{
 
     private int numeroDeCuenta;
-    private int asignaturasCursadas;
     private String nombre;
     private  HashMap<Integer, double> calificaciones;
     private double promedio;
@@ -59,7 +58,7 @@ public class Alumno{
         for(double i: calificaciones.entrySet()){
             suma += i;
         }
-        promedio = suma/asignaturasCursadas;
+        promedio = suma/calificaciones.size();
     }
 
     public void mostrar(HashMap<Integer , Asignatura> asignaturas){
@@ -70,6 +69,10 @@ public class Alumno{
         for(Integer i : calificaciones.keySet){
             System.out.println(asignaturas.get(i).getNombre() + ": " + calificaciones.get(i));
         }
+    }
+    
+    public String toString(){
+        return "\nNombre: "+ nombre+"\nIdentificador: "+identificador;
     }
 
 }
