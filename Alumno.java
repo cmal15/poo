@@ -9,7 +9,7 @@ public class Alumno{
     private String nombre;
     private  HashMap<Integer, double> calificaciones;
     private double promedio;
-    private static numeroAlumnos=0;
+    private static int numeroAlumnos=0;
 
     public Alumno(int numeroDeCuenta, String nombre){
 
