@@ -6,21 +6,22 @@ public class Grupo{
     private LinkedList<Alumno> alumnos;
     private static int cantidad = 0;
     
-    public Grupo( Asignatura asignatura,Profesor profesor,int numero,LinkedList<Alumno> alumnos){
-        this.asignatura = asignatura;
-        this.profesor = profesor;
-        this.numero = numero;
-        this.alumnos = alumnos;
-        cantidad++;
-    }
-
     public Grupo( Asignatura asignatura,Profesor profesor,int numero){
         this.asignatura = asignatura;
         this.profesor = profesor;
         this.numero = numero;
+        alumnos = new LinkedList<Alumno>();
         cantidad++;
     }
     
+    public void eliminar(){
+        asignatura = null;
+        profesor = null;
+        numero = null;
+        alumnos = null;
+        cantidad--;
+    }
+
     public static getCantidad(){
         return cantidad;
     }

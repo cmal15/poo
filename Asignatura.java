@@ -3,12 +3,14 @@ public class Asignatura{
     private int clave;
     private String nombre;
     private int creditos;
+
     public Asignatura(int clave,int horas,String nombre,int creditos){
         this.clave = clave;
         this.horas = horas;
         this.nombre = nombre;
         this.creditos = creditos;
     }
+    
     public Asignatura(String nombre,int creditos){
         this.nombre = nombre;
         this.creditos = creditos;

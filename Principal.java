@@ -9,7 +9,7 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
 
         HashMap<Integer, Alumno> alumnos = new HashMap<>();
-        LinkedList<Profesor> profesores = new LinkedList<Profesor>();
+        HashMap<Integer, Profesor> profesores = new HashMap<Profesor>();
         LinkedList<Grupo> grupos = new LinkedList<Grupo>();
         HashMap<Integer, Asignatura> asignaturas = new HashMap<>();
 
@@ -24,17 +24,56 @@ public class Principal {
                 op2 = sc.nextInt();
                 switch(op){
                     case 1:
+                        //alumno
                         alumnos.add(Alumno.nuevo(sc));
                         break;
                     case 2:
-
+                        //profesor
+                        System.out.println("Introduzca el identificador del nuevo profesor");
+                        aux = sc.nextInt();
+                        if(!profesores.containsKey(aux)){
+                            System.out.println("Introduzca el nombre del nuevo profesor");
+                            String nombre = sc.nextLine();
+                            profesor.put(aux,nombre);   
+                            System.out.println("Profesor añadido al sistema");
+                        }else{
+                            System.out.println("Ya hay un profesor con ese identificador");
+                        }
                         break;
                     case 3:
-
+                        //asignatura
+                        System.out.println("Introduzca la clave de la nueva asignatura");
+                        aux = sc.nextInt();
+                        if(asignaturas.containsKey(aux)){
+                            System.out.println("Ya hay una materia con esa clave");
+                        }else{
+                            System.out.println("Introduzca las horas de la materia: ")
+                            int horas = sc.nextInt();
+                            System.out.println("Introduzca los creditos de la materia: ")
+                            int creditos = sc.nextInt();
+                            System.out.println("Introduzca el nombre de la materia: ")
+                            String nombre = sc.nextLine();
+                            asignaturas.put(new Asignatura(aux,horas,nombre,creditos));
+                        }
                         break;
                     case 4:
-
-                        //eliminar
+                        //grupo
+                        System.out.println("Introduzca la clave de la asignatura");
+                        int asig = sc.nextInt();
+                        if(!asignaturas.containsKey(asig)){
+                            System.out.println("Clave no valida")
+                            break;
+                        }
+                        System.out.println("Introduzca el identificador del docente");
+                        int docente = sc.nextInt();
+                        if(!profesores.containsKey(docente)){
+                            System.out.println("Identificador no valido")
+                            break;
+                        }
+                        grupos.add(new Grupo(asig,docente,grupos.size()))
+                        break;
+                    default:
+                        break;
                 }
                 break;
             case 2:
