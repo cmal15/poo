@@ -3,17 +3,24 @@ public class Asignatura{
     private int clave;
     private String nombre;
     private int creditos;
-
+    private static numeroAsignatura=0;
+    
     public Asignatura(int clave,int horas,String nombre,int creditos){
         this.clave = clave;
         this.horas = horas;
         this.nombre = nombre;
         this.creditos = creditos;
+        numeroAsignatura++;
     }
     
     public Asignatura(String nombre,int creditos){
         this.nombre = nombre;
         this.creditos = creditos;
+        numeroAsignatura++;
+    }
+    
+    public int getNumeroDeCuenta(){
+        return numeroDeCuenta;
     }
     public int getClave(){
         return clave;
@@ -26,6 +33,9 @@ public class Asignatura{
     }
     public int getcreditos() {
         return creditos;
+    }
+    public int getnumeroAsignatura(){
+        return numeroAsignatura;
     }
     public void setClave(int clave){
         this.clave = clave;
