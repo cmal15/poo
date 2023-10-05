@@ -25,4 +25,7 @@ public class Profesor{
     public int getnumeroProfesor() {
         return numeroProfesor;
     }
+    public String toString(){
+        return 
+    }
 }
