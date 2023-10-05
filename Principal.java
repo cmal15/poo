@@ -9,32 +9,35 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
 
         HashMap<Integer, Alumno> alumnos = new HashMap<>();
-        HashMap<Integer, Profesor> profesores = new HashMap<Profesor>();
+        HashMap<Integer, Profesor> profesores = new HashMap<>();
         LinkedList<Grupo> grupos = new LinkedList<Grupo>();
         HashMap<Integer, Asignatura> asignaturas = new HashMap<>();
+        Alumno Alumnosc;
 
         int op, op2, aux;
         do {
             Menucito.operaciones();
             op = sc.nextInt();
+            sc.nextLine();
            switch (op) {
             case 1:
                 //Crear
                 Menucito.elementos();
                 op2 = sc.nextInt();
-                switch(op){
+                switch(op2){
                     case 1:
-                        //alumno
-                        alumnos.add(Alumno.nuevo(sc));
+                        Alumnosc=Alumno.nuevo(sc);
+                        alumnos.put(Alumnosc.getNumeroDeCuenta(),Alumnosc);
                         break;
                     case 2:
                         //profesor
                         System.out.println("Introduzca el identificador del nuevo profesor");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(!profesores.containsKey(aux)){
                             System.out.println("Introduzca el nombre del nuevo profesor");
                             String nombre = sc.nextLine();
-                            profesor.put(aux,nombre);   
+                            profesores.put(aux,new Profesor(nombre,aux));   
                             System.out.println("Profesor añadido al sistema");
                         }else{
                             System.out.println("Ya hay un profesor con ese identificador");
@@ -44,33 +47,37 @@ public class Principal {
                         //asignatura
                         System.out.println("Introduzca la clave de la nueva asignatura");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(asignaturas.containsKey(aux)){
                             System.out.println("Ya hay una materia con esa clave");
                         }else{
-                            System.out.println("Introduzca las horas de la materia: ")
+                            System.out.println("Introduzca las horas de la materia: ");
                             int horas = sc.nextInt();
-                            System.out.println("Introduzca los creditos de la materia: ")
+                            sc.nextLine();
+                            System.out.println("Introduzca los creditos de la materia: ");
                             int creditos = sc.nextInt();
-                            System.out.println("Introduzca el nombre de la materia: ")
+                            sc.nextLine();
+                            System.out.println("Introduzca el nombre de la materia: ");
                             String nombre = sc.nextLine();
-                            asignaturas.put(new Asignatura(aux,horas,nombre,creditos));
+                            asignaturas.put(aux,new Asignatura(aux,horas,nombre,creditos));
                         }
                         break;
                     case 4:
                         //grupo
                         System.out.println("Introduzca la clave de la asignatura");
                         int asig = sc.nextInt();
+                        sc.nextLine();
                         if(!asignaturas.containsKey(asig)){
-                            System.out.println("Clave no valida")
+                            System.out.println("Clave no valida");
                             break;
                         }
                         System.out.println("Introduzca el identificador del docente");
                         int docente = sc.nextInt();
                         if(!profesores.containsKey(docente)){
-                            System.out.println("Identificador no valido")
+                            System.out.println("Identificador no valido");
                             break;
                         }
-                        grupos.add(new Grupo(asig,docente,grupos.size()))
+                        grupos.add(new Grupo(asignaturas.get(asig),profesores.get(docente),grupos.size()));
                         break;
                     default:
                         break;
@@ -84,15 +91,23 @@ public class Principal {
                     case 1:
                         //alumno
                         System.out.println("Mostrando todos los alumnos del sistema");
-                        for(int i = 0; i < alumnos.size(); i++){
-                            System.out.println(alumnos.get(i));
-                        }                        
+                        for(Integer i : alumnos.keySet()){
+                             alumnos.get(i).mostrar(asignaturas);
+                            }    
                         break;
                     case 2:
                         //Profesor
+                        System.out.println("Mostrando todos los profesores del sistema");
+                        for(Integer i : profesores.keySet()){
+                             System.out.println(profesores.get(i));
+                            } 
                         break;
                     case 3:
                         //Asignatura
+                        System.out.println("Mostrando todos los profesores del sistema");
+                        for(Integer i : profesores.keySet()){
+                             System.out.println(profesores.get(i));
+                            } 
                         break;
                     case 4: 
                         //grupo
@@ -138,7 +153,7 @@ public class Principal {
                 switch(op2){
                     case 1:
                         //alumno
-                        System.out.println("Introduzca el numero de cuenta del alumno a eliminar:")
+                        System.out.println("Introduzca el numero de cuenta del alumno a eliminar:");
                         aux = sc.nextInt();
                         if(alumnos.containsKey(aux)){
                             alumnos.remove(aux);
@@ -164,7 +179,7 @@ public class Principal {
             default:
                 break;
            } 
-        } while(op < 4);
+        } while(op < 4 && op > 0);
 
         sc.close();
     }
