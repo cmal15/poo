@@ -26,6 +26,6 @@ public class Profesor{
         return numeroProfesor;
     }
     public String toString(){
-        return 
+        return "\nNombre: "+ nombre+"\nIdentificador: "+identificador;
     }
 }
