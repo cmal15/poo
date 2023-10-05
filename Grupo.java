@@ -38,6 +38,10 @@ public class Grupo{
         this.asignatura = asignatura;
     }
 
+    public void setAlumnos(LinkedList<Alumno> alumnos){
+        this.alumnos = alumnos;
+    }
+
     public Profesor getProfesor() {
         return profesor;
     }

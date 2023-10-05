@@ -104,9 +104,9 @@ public class Principal {
                         break;
                     case 3:
                         //Asignatura
-                        System.out.println("Mostrando todos los profesores del sistema");
-                        for(Integer i : profesores.keySet()){
-                             System.out.println(profesores.get(i));
+                        System.out.println("Mostrando todas las asignaturas del sistema");
+                        for(Integer i : asignaturas.keySet()){
+                             System.out.println(asignaturas.get(i));
                             } 
                         break;
                     case 4: 
@@ -248,7 +248,15 @@ public class Principal {
                         break;
                     case 4: 
                         //grupo
-                        
+                        System.out.println("Esto solo vaciara los datos del grupo");
+                        System.out.println("Introduzca el numero del grupo:");
+                        aux = sc.nextInt();
+                        if(aux < grupos.size()){
+                            grupos.get(aux).setAsignatura(null);
+                            grupos.get(aux).setProfesor(null);
+                            grupos.get(aux).setAlumnos(null);
+                            System.out.println("Se vaciaron los datos del grupo");
+                        }
                         break;
                     default:
                         break;
@@ -258,7 +266,7 @@ public class Principal {
             default:
                 break;
            } 
-        } while(op < 4 && op > 0);
+        } while(op <= 4 && op > 0);
 
         sc.close();
     }

@@ -46,4 +46,11 @@ public class Asignatura{
     public void setCreditos (int creditos) {
         this.creditos = creditos;
     }
+    public String toString(){
+        return "Nombre: " + nombre +
+                "\nClave: " + clave +
+                "\nHoras: " + horas +
+                "\nCreditos: " + creditos +
+                "\n";
+    }
 }
