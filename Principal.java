@@ -239,13 +239,12 @@ public class Principal {
                         //Asignatura
                         System.out.println("Introduzca la clave de la asignatura a eliminar:");
                         aux = sc.nextInt();
-                        if(asignatura.containsKey(aux)){
-                            asignatura.remove(aux);
+                        if(asignaturas.containsKey(aux)){
+                            asignaturas.remove(aux);
                             System.out.println("Se elimino la asignatura con la clave: "+ aux);
                         }else{
                             System.out.println("No hay asignatura registrada con esa clave");
                         }
-                        break;
                         break;
                     case 4: 
                         //grupo

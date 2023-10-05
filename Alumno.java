@@ -70,7 +70,7 @@ public class Alumno{
     }
     
     public String toString(){
-        String calificacionesAlu;
+        //String calificacionesAlu;
         return "\nNombre: "+ nombre+"\nNumero de cuenta: "+numeroDeCuenta+"\nPromedio: "+promedio;
     }
 }
