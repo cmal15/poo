@@ -3,7 +3,7 @@ public class Asignatura{
     private int clave;
     private String nombre;
     private int creditos;
-    private static numeroAsignatura=0;
+    private static int numeroAsignatura=0;
     
     public Asignatura(int clave,int horas,String nombre,int creditos){
         this.clave = clave;
