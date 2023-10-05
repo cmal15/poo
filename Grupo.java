@@ -25,15 +25,23 @@ public class Grupo{
     public static int getCantidad(){
         return cantidad;
     }
-
-    public Asignatura setAsignatura() {
-        return asignatura;
+    
+    public LinkedList<Alumno> getAlumnos(){
+        return alumnos;
     }
 
-    public Profesor setprofesor() {
+    public void setProfesor(Profesor profesor){
+        this.profesor = profesor;
+    }
+    
+    public void setAsignatura(Asignatura asignatura){
+        this.asignatura = asignatura;
+    }
+
+    public Profesor getProfesor() {
         return profesor;
     }
-    public int setnumero() {
+    public int setNumero() {
         return numero;
     }
 

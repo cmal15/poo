@@ -151,12 +151,58 @@ public class Principal {
                             System.out.println("Identificador invalido");
                         }
                         break;
-                    case 3:
-                        
+                        case 3:
                         //Asignatura
+                        System.out.println("Introduzca la clave de la asignatura");
+                        aux = sc.nextInt();
+                        sc.nextLine();
+                        if(asignaturas.containsKey(aux)){
+                            System.out.println("Introduzca el nombre");
+                            String nombre = sc.nextLine();
+                            System.out.println("Introduzca las horas");
+                            int horas = sc.nextInt();
+                            System.out.println("Introduzca los creditos");
+                            int creditos = sc.nextInt();
+                            sc.nextLine();
+                            asignaturas.get(aux).setNombre(nombre);
+                            asignaturas.get(aux).setHoras(horas);
+                            asignaturas.get(aux).setCreditos(creditos);
+                            System.out.println("Se modificaron los datos de la asignatura");
+                        }else{
+                            System.out.println("No hay asignatura con la clave dada");
+                        }
                         break;
                     case 4: 
                         //grupo
+                        System.out.println("Introduzca el numero de grupo");
+                        aux = sc.nextInt();
+                        if(grupos.size() < --aux){
+                            System.out.println("Grupo no registrado");
+                            break;
+                        }
+                        System.out.println("Introduzca el identificador del profesor");
+                        int doc = sc.nextInt();
+                        if(profesores.containsKey(doc)){
+                            grupos.get(aux).setProfesor(profesores.get(doc));
+                        }
+                        do{
+                            System.out.println("1.Modificar alumnos\t2.Salir del menu");
+                            op = sc.nextInt();
+                            sc.nextLine();
+                            if(op == 1){
+                                System.out.println("Introduzca un numero de cuenta, si no esta registrado se registrara, en caso contrario se eliminara");
+                                int num = sc.nextInt();
+                                if(alumnos.containsKey(aux)){
+                                    if(grupos.get(aux).getAlumnos().contains(alumnos.get(num))){
+                                        grupos.get(aux).getAlumnos().remove(alumnos.get(num));
+                                    }else{
+                                        grupos.get(aux).getAlumnos().add(alumnos.get(num));
+                                    }
+                                }else{
+                                    System.out.println("Numero de cuenta invalido");
+                                } 
+                            }
+                        }while(op == 1);
                         break;
                     default:
                         break;
