@@ -47,4 +47,15 @@ public class Grupo{
     public int getnumero() {
         return numero;
     }
+
+    public String toString(){
+        String str = "";
+        for(int i = 0; i < alumnos.size(); i++){
+            str += alumnos.get(i).getNumeroDeCuenta() + ": " + alumnos.get(i).getNombre() + "\n";
+        }
+        return "Asignatura: " + asignatura.getnombre() +
+                "\nProfesor: " + profesor.getnombre() +
+                "\nNumero: " + numero + 
+                "\nAlumnos:\n"+ str;
+    }
 }

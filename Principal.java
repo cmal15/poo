@@ -110,6 +110,11 @@ public class Principal {
                             } 
                         break;
                     case 4: 
+                        System.out.println("Mostrando todos los grupos");
+                        for(int i = 0; i < grupos.size(); i++){
+                            System.out.println(grupos.get(i));
+                            System.out.println();
+                        }
                         //grupo
                         break;
                     default:
