@@ -226,12 +226,30 @@ public class Principal {
                         break;
                     case 2:
                         //Profesor
+                        System.out.println("Introduzca el numero identificador del profesor a eliminar:");
+                        aux = sc.nextInt();
+                        if(profesores.containsKey(aux)){
+                            profesores.remove(aux);
+                            System.out.println("Se elimino el profesor con el identificador: "+ aux);
+                        }else{
+                            System.out.println("No hay profesor registrado con ese identificador");
+                        }
                         break;
                     case 3:
                         //Asignatura
+                        System.out.println("Introduzca la clave de la asignatura a eliminar:");
+                        aux = sc.nextInt();
+                        if(asignatura.containsKey(aux)){
+                            asignatura.remove(aux);
+                            System.out.println("Se elimino la asignatura con la clave: "+ aux);
+                        }else{
+                            System.out.println("No hay asignatura registrada con esa clave");
+                        }
+                        break;
                         break;
                     case 4: 
                         //grupo
+                        
                         break;
                     default:
                         break;
