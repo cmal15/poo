@@ -15,7 +15,6 @@ public class Alumno{
         this.numeroDeCuenta = numeroDeCuenta;
         this.nombre = nombre;
         this.promedio = 0f;
-        asignaturasCursadas = 0;
         calificaciones = new HashMap<>();
         numeroAlumnos++;
     }
