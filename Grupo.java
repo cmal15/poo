@@ -63,11 +63,11 @@ public class Grupo{
     public String toString(){
         String str = "";
         for(int i = 0; i < alumnos.size(); i++){
-            str += alumnos.get(i).getNumeroDeCuenta() + ": " + alumnos.get(i).getNombre() + "\n";
+            str = str + alumnos.get(i).getNumeroDeCuenta() + ": " + alumnos.get(i).getNombre() + "\n";
         }
         return "Asignatura: " + asignatura.getNombre() +
                 "\nProfesor: " + profesor.getNombre() +
-                "\nNumero: " + numero + 
+                "\nNumero: " + (numero+1) + 
                 "\nAlumnos:\n"+ str;
     }
 }

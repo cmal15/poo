@@ -24,6 +24,7 @@ public class Principal {
                 //Crear
                 Menucito.elementos();
                 op2 = sc.nextInt();
+                sc.nextLine();
                 switch(op2){
                     case 1:
                         Alumnosc=Alumno.nuevo(sc);
@@ -73,6 +74,7 @@ public class Principal {
                         }
                         System.out.println("Introduzca el identificador del docente");
                         int docente = sc.nextInt();
+                        sc.nextLine();
                         if(!profesores.containsKey(docente)){
                             System.out.println("Identificador no valido");
                             break;
@@ -87,6 +89,7 @@ public class Principal {
                 //Consultar
                 Menucito.elementos();
                 op2 = sc.nextInt();
+                sc.nextLine();
                 switch(op2){
                     case 1:
                         //alumno
@@ -125,11 +128,13 @@ public class Principal {
                 //Modificar
                 Menucito.elementos();
                 op2 = sc.nextInt();
+                sc.nextLine();
                 switch(op2){
                     case 1:
                         //alumno
                         System.out.println("Introduzca el numero de cuenta del alumno a modificar");
                             aux = sc.nextInt();
+                            sc.nextLine();
                             if(alumnos.containsKey(aux)){
                                 System.out.print("Introduzca el nombre: ");
                                 String nombre = sc.nextLine();
@@ -176,12 +181,14 @@ public class Principal {
                         //grupo
                         System.out.println("Introduzca el numero de grupo");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(grupos.size() < --aux){
                             System.out.println("Grupo no registrado");
                             break;
                         }
                         System.out.println("Introduzca el identificador del profesor");
                         int doc = sc.nextInt();
+                        sc.nextLine();
                         if(profesores.containsKey(doc)){
                             grupos.get(aux).setProfesor(profesores.get(doc));
                         }
@@ -192,7 +199,8 @@ public class Principal {
                             if(op == 1){
                                 System.out.println("Introduzca un numero de cuenta, si no esta registrado se registrara, en caso contrario se eliminara");
                                 int num = sc.nextInt();
-                                if(alumnos.containsKey(aux)){
+                                sc.nextLine();
+                                if(alumnos.containsKey(num)){
                                     if(grupos.get(aux).getAlumnos().contains(alumnos.get(num))){
                                         grupos.get(aux).getAlumnos().remove(alumnos.get(num));
                                     }else{
@@ -212,11 +220,13 @@ public class Principal {
                 //Eliminar
                 Menucito.elementos();
                 op2 = sc.nextInt();
+                sc.nextLine();
                 switch(op2){
                     case 1:
                         //alumno
                         System.out.println("Introduzca el numero de cuenta del alumno a eliminar:");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(alumnos.containsKey(aux)){
                             alumnos.remove(aux);
                             System.out.println("Se elimino el alumno con el numero de cuenta: "+ aux);
@@ -228,6 +238,7 @@ public class Principal {
                         //Profesor
                         System.out.println("Introduzca el numero identificador del profesor a eliminar:");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(profesores.containsKey(aux)){
                             profesores.remove(aux);
                             System.out.println("Se elimino el profesor con el identificador: "+ aux);
@@ -239,6 +250,7 @@ public class Principal {
                         //Asignatura
                         System.out.println("Introduzca la clave de la asignatura a eliminar:");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(asignaturas.containsKey(aux)){
                             asignaturas.remove(aux);
                             System.out.println("Se elimino la asignatura con la clave: "+ aux);
@@ -251,6 +263,7 @@ public class Principal {
                         System.out.println("Esto solo vaciara los datos del grupo");
                         System.out.println("Introduzca el numero del grupo:");
                         aux = sc.nextInt();
+                        sc.nextLine();
                         if(aux < grupos.size()){
                             grupos.get(aux).setAsignatura(null);
                             grupos.get(aux).setProfesor(null);
