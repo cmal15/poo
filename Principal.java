@@ -139,6 +139,22 @@ public class Principal {
                                 System.out.print("Introduzca el nombre: ");
                                 String nombre = sc.nextLine();
                                 alumnos.get(aux).setNombre(nombre);
+                                do{
+                                    System.out.println("1.Añadir calificacion\t2.Salir del menu");
+                                    op2 = sc.nextInt();
+                                    if(op2 == 1){
+                                        System.out.println("Introduzca la clave de la calificaicon");
+                                        int clave = sc.nextInt();
+                                        if(asignaturas.containsKey(clave)){
+                                            System.out.println("Introduzca la calificacion");
+                                            double calificacion = sc.nextInt();
+                                            alumnos.get(aux).addCalificacion(clave, calificacion);
+                                        }else{
+                                            System.out.println("Clave invalida");
+                                        }
+                                    }
+                                    sc.nextLine();
+                                }while(op2 != 1);
                             }else{
                                 System.out.println("No hay alumno registrado con ese numero de cuenta");
                             }

@@ -11,7 +11,6 @@ public class Alumno{
     private static int numeroAlumnos=0;
 
     public Alumno(int numeroDeCuenta, String nombre){
-
         this.numeroDeCuenta = numeroDeCuenta;
         this.nombre = nombre;
         this.promedio = 0f;
