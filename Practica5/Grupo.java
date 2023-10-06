@@ -21,7 +21,7 @@ public class Grupo{
         profesor = null;
         //numero = null;
         alumnos = null;
-        cantidad--;
+        //cantidad--;
     }
 
     public static int getCantidad(){

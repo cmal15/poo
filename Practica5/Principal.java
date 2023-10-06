@@ -283,9 +283,7 @@ public class Principal {
                         aux = sc.nextInt();
                         sc.nextLine();
                         if(aux < grupos.size()){
-                            grupos.get(aux).setAsignatura(null);
-                            grupos.get(aux).setProfesor(null);
-                            grupos.get(aux).setAlumnos(null);
+                            grupos.get(aux).eliminar();
                             System.out.println("Se vaciaron los datos del grupo");
                         }
                         break;
