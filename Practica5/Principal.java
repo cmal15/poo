@@ -1,3 +1,5 @@
+package Practica5;
+
 import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.HashMap;

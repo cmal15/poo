@@ -1,3 +1,5 @@
+package Practica5;
+
 public class Profesor{
     
     private String nombre;

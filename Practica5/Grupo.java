@@ -1,3 +1,5 @@
+package Practica5;
+
 import java.util.LinkedList;
 public class Grupo{
     private Asignatura asignatura;

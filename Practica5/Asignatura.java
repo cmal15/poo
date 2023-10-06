@@ -1,3 +1,5 @@
+package Practica5;
+
 public class Asignatura{
     private int horas;
     private int clave;
